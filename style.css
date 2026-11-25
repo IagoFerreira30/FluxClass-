@@ -1,0 +1,224 @@
+/* ===== Reset ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --roxo: #6c47ff;
+  --azul-meio: #3a7dff;
+  --ciano: #08aaff;
+  --azul-botao: #0066ff;
+  --card: #f8f9fe;
+  --borda: #e7eaf3;
+  --borda-ativa: #a8cdf6;
+  --texto: #5d616d;
+}
+
+html, body { height: 100%; }
+
+body {
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background: #ffffff;
+  color: #111;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ===== Página (referência: 934 x 584) ===== */
+.pagina {
+  position: relative;
+  min-height: 100vh;
+  min-height: max(100vh, 584px);
+  overflow: hidden;
+  background: #fff;
+}
+
+.lado-login {
+  width: calc(100% - 339px);
+  min-height: inherit;
+  padding-top: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== Logotipo ===== */
+.logo {
+  position: relative;
+  width: 124px;
+  height: 103px;
+  margin-bottom: 45px;
+  text-align: center;
+}
+
+.logo__icone {
+  position: absolute;
+  top: 0;
+  left: 32px;
+}
+
+.logo__nome {
+  position: absolute;
+  top: 66px;
+  left: 0;
+  width: 124px;
+  font-family: "Outfit", "Inter", sans-serif;
+  font-size: 24px;
+  letter-spacing: 0.3px;
+  font-weight: 400;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.logo__flux  { color: #25274a; }
+.logo__class {
+  background: linear-gradient(90deg, #7b3fff 0%, #6c47ff 100%);
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #6c47ff;
+}
+
+.logo__slogan {
+  position: absolute;
+  top: 94px;
+  left: 3px;
+  width: 118px;
+  font-family: "Inter", sans-serif;
+  font-size: 5.6px;
+  font-weight: 500;
+  letter-spacing: 0.9px;
+  text-transform: uppercase;
+  color: #3b3d4f;
+  white-space: nowrap;
+}
+
+/* ===== Cartão do formulário ===== */
+.cartao {
+  width: 416px;
+  height: 349px;
+  padding: 25px 20px 0;
+  background: var(--card);
+  border-radius: 30px;
+}
+
+.campo {
+  display: block;
+  width: 100%;
+  height: 46px;
+  padding: 0 31px;
+  font-family: "Inter", sans-serif;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: var(--texto);
+  background: #fff;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  outline: none;
+}
+
+.campo + .campo { margin-top: 12px; }
+
+.campo--ativo {
+  font-weight: 500;
+  color: #000;
+  border-color: var(--borda-ativa);
+}
+
+.campo::placeholder { color: var(--texto); opacity: 1; }
+
+.campo:focus { border-color: var(--borda-ativa); }
+
+/* ===== Divisor ===== */
+.divisor {
+  display: flex;
+  align-items: center;
+  height: 16px;
+  margin-top: 31px;
+  font-size: 11.5px;
+  color: var(--texto);
+  white-space: nowrap;
+}
+
+.divisor hr {
+  flex: 1;
+  height: 1px;
+  margin-left: 29px;
+  border: 0;
+  background: #e6e8f0;
+}
+
+/* ===== Botões sociais ===== */
+.sociais {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  margin-top: 21px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.social--google   { width: 171px; height: 45px; background: #fffafb; margin-right: 31px; }
+.social--facebook { width: 174px; height: 48px; background: #ffffff; }
+
+/* ===== Botão principal ===== */
+.acesso {
+  display: block;
+  width: 266px;
+  height: 42px;
+  margin: 33px 0 0 48px;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12px;
+  color: #e4edff;
+  text-decoration: underline;
+  background: var(--azul-botao);
+  border: 0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.acesso:hover { background: #005ce6; }
+
+/* ===== Arte lateral (arcos) ===== */
+.lado-arte {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 339px;
+  pointer-events: none;
+}
+
+.arco {
+  position: absolute;
+  top: -104px;
+  height: calc(100% + 208px);
+  min-height: 792px;
+  width: 400px;
+  border-radius: 50%;
+}
+
+.arco:nth-child(odd)  { background: linear-gradient(180deg, var(--roxo) 13%, var(--azul-meio) 55%, var(--ciano) 87%); }
+.arco:nth-child(even) { background: #fff; }
+
+.arco--1 { left: 0; }
+.arco--2 { left: 22px; }
+.arco--3 { left: 37px; }
+.arco--4 { left: 55px; }
+.arco--5 { left: 68px; }
+.arco--6 { left: 90px; }
+.arco--7 { left: 115px; }
+
+/* ===== Adaptações responsivas ===== */
+@media (max-width: 760px) {
+  .lado-login { width: 100%; padding: 40px 16px; }
+  .lado-arte  { display: none; }
+  .cartao     { width: 100%; max-width: 416px; }
+  .acesso     { margin-left: auto; margin-right: auto; max-width: 100%; }
+  .social--google, .social--facebook { flex: 1; width: auto; }
+  .social--google { margin-right: 16px; }
+}
